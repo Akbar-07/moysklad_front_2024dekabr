@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .navbar_body{
-   max-width: 1327px;
-   width: 90%;
+   max-width: 1330px;
+   width: 100%;
    margin: auto; 
+   /* padding: 20px 20px 0 20px; */
 }
 .navbar_top{
     display: grid;
@@ -77,12 +78,13 @@ height: 22px;
 }
 .menu__bar{
     background-color: white;
-    width: 200px;
+    width: 330px;
     position: fixed;
     top: 0px;
     right: 120%;
     z-index: 123;
     display: none;
+    height: 100vh;
 }
 
 .navbar__action_item{
@@ -209,6 +211,13 @@ text-align: center;
         height: 105px;
     }
 }
+
+@media(max-width: 1050px){
+    .navbar__action{
+        gap: 25px;
+    }
+}
+
 @media(max-width:991px){
 .navbar_top{
     display: none;
@@ -253,7 +262,8 @@ text-align: center;
 .menu__bar{
     padding: 20px;
     display: block;
-    transition: 2s;
+    transition: 1.2s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .count__nomber{
     position: absolute;
@@ -268,6 +278,25 @@ text-align: center;
 }
 }
 
+@media(max-width: 480px){
+    
+    .navbar__filter__search input{
+        font-size: 11px;
+    }
+
+    .menu__bar{
+        width: 100%;
+    }
+
+    .close__toggle{
+        margin-right: 0 !important;
+    }
+
+    .toolbar__li{
+        font-size: 14px !important;
+    }
+    
+}
 
 .close__toggle{
     display: flex;
@@ -280,12 +309,12 @@ text-align: center;
 .toolbar__li{
 list-style: none;
 font-family: Inter;
-font-size: 10px;
+font-size: 16px;
 font-weight: 400;
 line-height: 12.1px;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
-margin-top: 10px;
+margin-top: 25px;
 margin-bottom: 10px;
 display: flex;align-items: center;
 gap: 5px;
@@ -358,6 +387,7 @@ text-decoration-skip-ink: none;
     grid-template-columns: 250px auto;
     background-color: white;
     width: 100%;
+    z-index: 111;
 }
 .katalogPage:hover .katalogPage__category__cards{
     display: flex;

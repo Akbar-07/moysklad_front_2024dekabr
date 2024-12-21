@@ -7,8 +7,8 @@ letter-spacing: 0.20000000298023224px;
 text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
-max-width: 1327px;
-width: 90%;
+max-width: 1330px;
+width: 100%;
 margin: auto;
 margin-top: 30px;
 }
@@ -17,8 +17,8 @@ margin-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-    max-width: 1327px;
-width: 90%;
+    max-width: 1330px;
+width: 100%;
 margin: auto;
 margin-top: 20px;
 margin-bottom: 20px;
@@ -56,8 +56,8 @@ text-decoration-skip-ink: none;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
-        max-width: 1327px;
-    width: 90%;
+        max-width: 1330px;
+    width: 100%;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -68,10 +68,25 @@ text-decoration-skip-ink: none;
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
-        max-width: 1327px;
-    width: 90%;
+        max-width: 1330px;
+    width: 100%;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 480px){
+    .storage_title{
+        font-size: 24px;
+    }
+
+    .storage__card h1{
+        font-size: 16px;
+    }
+
+    .storage__card p{
+        font-size: 14px;
+        line-height: 18px;
     }
 }

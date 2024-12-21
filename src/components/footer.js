@@ -16,7 +16,7 @@ export default function footer() {
 <div className={s.footer__item}>
 <Image src={logo} alt="" />
 <h1> <FaPhone style={{fontSize:'15px'}} /> +998 94 545 2266</h1>
-<p><MdEmail /> info@rce.uz</p>
+<h1 style={{fontWeight:"100"}}><MdEmail /> info@rce.uz</h1>
 </div>
 <div className={s.footer__item}>
   <h2>Biz haqimizda</h2>

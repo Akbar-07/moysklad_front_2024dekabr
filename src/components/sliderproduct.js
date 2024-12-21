@@ -40,14 +40,19 @@ ref={swiperRef}
         // Breakpoints
         220: {
           slidesPerView: 2,
-        },   400: {
+          spaceBetween: 10
+
+        },   420: {
           slidesPerView: 2,
+          spaceBetween: 20
         },
         768: {
           slidesPerView: 3,
+          spaceBetween: 20
         },
         1024: {
           slidesPerView: 4,
+          spaceBetween: 20
         },
       }}
       autoplay={{

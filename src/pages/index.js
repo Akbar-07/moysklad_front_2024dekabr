@@ -86,9 +86,10 @@ useEffect(()=>{
 },[])
 
   return (
-    <div >
+    <div>
+      <div style={{padding:"0 20px"}}>
       <Navbar />
-      <div className={s.carousel_panel}>
+      <div  className={s.carousel_panel}>
         <Swiper
           cssMode={true}
           navigation={{
@@ -120,11 +121,11 @@ useEffect(()=>{
         </div>
         <div className={s.mini_cantroll_bar}>
           {headerImage.map((label, index) => (
-            <div style={indexkey == index ? { borderBottom: "1px solid #E30613", color: '#E30613',textWrap:'nowrap' } : { borderBottom: 'none', color: "black" }} key={index} className="pagination-button" onClick={() => { swiperRef.current.slideTo(index); setIndexKey(index) }} >
+            <div style={indexkey == index ? { borderBottom: "1px solid #E30613", color: '#E30613',textWrap:'nowrap' } : { borderBottom: 'none', color: "black", cursor:"pointer" }} key={index} className="pagination-button" onClick={() => { swiperRef.current.slideTo(index); setIndexKey(index) }} >
               {label.title}
             </div>
           ))}</div>
-      </div>
+      </div></div>
 
 
       <div className={s.reklama_link}>
@@ -133,6 +134,8 @@ useEffect(()=>{
           ISHLAB  CHIQARUVCHILAR  VA  DISTRIBYUTORLAR</div>
         <div onClick={()=>window.location=link} className={s.reklama_link_button}>HOZIR  MUROJAT  QILING</div>
       </div>
+
+      <div>
 
 {categoryHeader.length>6?(<div className={s.hompage_category}>
 <h4 className={s.hompage_category_title}>Ommabop Kategoriyalar</h4>
@@ -180,6 +183,8 @@ useEffect(()=>{
 </div>
 </div>):(<></>)}
 
+<div className={s.for_sliders} style={{padding:"0 20px"}}>
+
 <Sliderproduct  mapdata={product} id={"topTovarId"} data={{title:'Top sotuvlar',
       h1:'Eng mashhur mahsulotlar',
       p:'Bizning mijozlarimiz tanlovi'
@@ -193,7 +198,9 @@ useEffect(()=>{
       p:"Yuqori talabga ega bo'lgan yangi mahsulotlar"
       }}/>
 
+</div>
 
+<div style={{padding:"0 20px"}}>
 <div className={s.barcha_homiylar}>
 <h2 className={s.title_homiylar}>
 Barcha Diller va Distrebutellar
@@ -224,10 +231,10 @@ Barcha Diller va Distrebutellar
                     </SwiperSlide>
                 ))}
                       {/* Custom Navigation Buttons */}
-                      <div className="swiper-button-prev3" style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)',zIndex:123 }}>
+                      <div className="swiper-button-prev3" style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)',zIndex:123, cursor:"pointer" }}>
                     <FaArrowLeftLong size={30} />
                 </div>
-                <div className="swiper-button-next3" style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)',zIndex:123 }}>
+                <div className="swiper-button-next3" style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)',zIndex:123, cursor:"pointer" }}>
                     <FaArrowRightLong size={30} />
                 </div>
             </Swiper>
@@ -298,8 +305,10 @@ Kengaytirilgan, muntazam yangilanib turuvchi katalog 7 000 000 dan ortiqni o'z
 Buyurtmalarni Rossiya, Belarus, Qozog'iston, Armaniston va Qirg'izistonning barcha hududlariga yetkazib beramiz.
 </p>
 <Image className={s.radiocity_1_img} src={roboto} alt="" />
-</div>
+</div></div></div>
 <Footer/>
+
+
 
 
 

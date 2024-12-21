@@ -16,6 +16,7 @@ export default function page() {
 
     return (
     <div className={s.about}>
+    <div  style={{padding:"0 20px"}}>
     <Navbar1/>
     <div className={s.about__title}>
       Siz etkazib beruvchi bo'lishni rejalashtiryapsizmi?
@@ -137,6 +138,8 @@ Radio City yetkazib beruvchisi boʻlish uchun hamkorlik uchun ariza toʻldirishi
 
 
 </ul>
+</div>
+
 <div className={s.about__video_big}>
 <iframe className={s.about__video} src="https://www.youtube.com/embed/05BZsQh6amo?si=VgvparmIFZDhHWdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>

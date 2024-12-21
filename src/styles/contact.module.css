@@ -7,16 +7,16 @@ letter-spacing: 0.20000000298023224px;
 text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
-width: 90%;
-max-width: 1327px;
+width: 100%;
+max-width: 1330px;
 margin: auto;
 margin-top: 40px;
 }
 .contact_body{
     display: grid;
     grid-template-columns: 375px 3fr;
-    max-width: 1327px;
-    width: 90%;
+    max-width: 1330px;
+    width: 100%;
     margin: auto;
     gap: 20px;
     margin-top: 30px;
@@ -79,4 +79,20 @@ grid-template-columns: 1fr;
         height: 233px;
         border: none;
     } 
+
+    .contact__title{
+        font-size: 24px;
+    }
+
+    .contact_text h5{
+        font-size: 18px;
+    }
+
+    .contact_text h4{
+        font-size: 16px;
+    }
+
+    .contact_text p{
+        font-size: 14px;
+    }
 }

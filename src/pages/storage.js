@@ -5,7 +5,10 @@ import s from "../styles/storage.module.css"
 export default function page() {
   return (
     <div>
+        <div style={{padding:"0 20px"}}>
         <Navbar1/>
+
+        
 <h1 className={s.storage_title}>Kompaniya tarixi</h1>
 <div className={s.storage__cards}>
     <div className={s.storage__card}>
@@ -90,7 +93,7 @@ Yangi zamonaviy avtomatlashtirilgan omborning ochilishi</p>
 </div>
 
 
-
+</div>
         <Footer1/>
     </div>
   )

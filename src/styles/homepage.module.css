@@ -3,8 +3,8 @@
     height: 375px !important;   
 }
 .carousel_panel{
-    max-width: 1327px;
-    width: 90%;
+    max-width: 1330px;
+    width: 100%;
     margin: auto;
     margin-top: 31px;
     /* height: 500px; */
@@ -47,7 +47,6 @@ overflow-y: auto;
         height: 26vw !important;   
     }
     .mini_cantroll_bar{
-        font-size: 10px;
         gap: 20px;
         text-wrap: nowrap;
     }
@@ -61,7 +60,14 @@ overflow-y: auto;
       justify-content: space-between;
     }
 }
-    @media (max-width:400px){
+
+@media(max-width: 480px){
+    .mini_cantroll_bar{
+        font-size: 10px;
+    }
+}
+
+    @media (max-width:420px){
         .swipper_slide{
             height: 105px !important;   
         }
@@ -101,8 +107,8 @@ overflow-y: auto;
 
 
 .reklama_link{
-    width: 90%;
-    max-width: 1327px;
+    width: 100%;
+    max-width: 1330px;
     margin: auto;
     background: #0E415A;
 display: grid;
@@ -334,8 +340,8 @@ height: auto;
 height: auto !important;
 }
 .barcha_homiylar{
-    width: 90%;
-    max-width: 1327px;
+    width: 100%;
+    max-width: 1330px;
     margin: auto;
     position: relative;
 }
@@ -361,8 +367,8 @@ margin-bottom: 30px;
 .video_yangilik{
     display: grid;
     grid-template-columns: 2fr 1fr;
-    width: 90%;
-    max-width: 1327px;
+    width: 100%;
+    max-width: 1330px;
     margin: auto;
     gap: 30px;
 }
@@ -459,8 +465,8 @@ height: 350px;
 .video_yangilik{
     display: grid;
     grid-template-columns: 1fr;
-    width: 90%;
-    max-width: 1327px;
+    width: 100%;
+    max-width: 1330px;
     margin: auto;
     gap: 30px;
 }
@@ -480,6 +486,10 @@ height: 200px;
 } 
 .video__smallCard iframe {
     height: 100px;
+}
+
+.for_sliders{
+    padding: 0 !important;
 }
 }
 

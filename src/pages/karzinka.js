@@ -263,6 +263,7 @@ deleteAll()
 
   return (
     <div className={s.App}>
+      <div style={{padding:"20px"}}>
       <Navbar1 />
       <div className={s.card_main}>
         <h1>Savat</h1>
@@ -340,6 +341,7 @@ deleteAll()
         </div>
       </div>
       <a style={{ margin: "auto", display: "flex", maxWidth: "max-content", marginBottom: "20px" }} href="./Information">tovar malumotlari</a>
+      </div>
       <Footer1 />
     </div>
   );

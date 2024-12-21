@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 .top_slider{
     /* width: 97%; */
-    max-width: 1287px;
+    max-width: 1330px;
     background-color: #ecf7ff;
     min-height: 300px;
     margin: auto;
-    width: 90%;
+    width: 100%;
     display: flex;
     margin-top: 30px;
 padding-top: 30px;
@@ -31,7 +31,7 @@ text-decoration-skip-ink: none;
 display: flex;
 justify-content: space-around;
 flex-direction: column;
-height: 300px;
+min-height: 300px;
 /* margin-right: 5px; */
 }
 .top_slider .main_1{
@@ -66,7 +66,7 @@ height: 300px;
     color: #1c2d38da;
     font-size: 23px;
     margin-top: 20px;
-    margin-bottom: -20px;
+    margin-bottom: -33px;
 }
 .top_slider .main_1 h1{
 margin-bottom: 20px;
@@ -75,7 +75,7 @@ margin-bottom: 20px;
     padding: 20px;
     padding-top: 10px;
     background-color: white;
-    width: 94%;
+    width: 100%;
     box-shadow: 0px 2px 15px 0px #00000033;
     border: 1px solid #DDEAF2;
     border-radius: 6px;
@@ -83,6 +83,7 @@ margin-bottom: 20px;
 
 .top_slider .header_carousel .card h5{
     text-align: left;
+    height: 30px;
 }
  
 .top_slider .header_carousel .card p{
@@ -95,6 +96,8 @@ margin-bottom: 20px;
 }
 .top_slider .header_carousel .card h2{
     text-align: left;
+    margin-top: 5px;
+    font-size: 20px;
     /* min-height: 60px;
     margin-top: 30px; */
     /* background-color: red; */
@@ -102,7 +105,7 @@ margin-bottom: 20px;
 .top_slider .main_2 .section2{
 border: 1px solid #1c2d388e;
 width: 250px;
-height: 290px;
+height: 297px;
 margin: auto;
 /* height: 100%; */
 margin-top: 40px;
@@ -208,13 +211,16 @@ height: 200px;
         margin-bottom: 5px;
         font-size: 10px;
         font-family: Inter;
-font-size: 14px;
+font-size: 12px;
 font-weight: 400;
 line-height: 16.94px;
 text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
 
+    }
+    .sliderproduct_count_product__UHpPG{
+        font-size: 9px;
     }
     .header_carousel .card h5{
         font-family: Inter;
@@ -229,7 +235,7 @@ text-decoration-skip-ink: none;
         /* height: 60px; */
         /* background-color: red; */
         font-family: Inter;
-font-size: 20px;
+font-size: 14px;
 font-weight: 700;
 line-height: 24.2px;
 text-align: left;
