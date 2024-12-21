@@ -110,7 +110,7 @@ text-decoration-skip-ink: none;
     }
     .catalog_filter_result{
         display: grid;
-        grid-template-columns: 50px auto;
+        grid-template-columns: auto auto;
         gap: 40px;
         width: 78%;
     margin: auto;

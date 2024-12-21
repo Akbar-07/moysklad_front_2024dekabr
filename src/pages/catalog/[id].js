@@ -17,24 +17,45 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Catalog() {
   const { setCartCount } = useCart();
   const router = useRouter();
-  const { id } = router.query;
+  const { id,title } = router.query;
   var [min2, setMin] = useState(0);
-  var [max2, setMax] = useState(20000);
+  var [max2, setMax] = useState(9000000);
   var [data1,setData]=useState([])
   var [count,setCount]=useState(0)
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 5; 
 
   function getProduct() {
-    
-    axios.get(`${url}/api/category/product/${id}?limit=12`)
+    if(id==0){
+      axios.get(`${url}/api/product?limit=100`)
       .then(res => {
-        console.log('API Response:', res.data); // API javobini konsolga chiqarish
-        setData(res.data);
+        
+        const filteredData = (res.data).filter(product => {
+          return product.buyPrice.value/100 >= min2 && product.buyPrice.value/100 <= max2;
+      });
+      // Pagination
+      const totalPages = Math.ceil(filteredData.length / 12);
+      setCount(totalPages)
+      setData(filteredData)
       })
       .catch(err => {
         console.error('API Error:', err); // Xatolik yuz bersa, konsolga chiqarish
       });
+    }else if(id){
+       axios.get(`${url}/api/category/product/${id}?limit=100`)
+      .then(res => {
+        const filteredData = (res.data).filter(product => {
+          return (product.buyPrice.value/100 >= min2 && product.buyPrice.value/100 <= max2)
+      });
+      // Pagination
+      const totalPages = Math.ceil(filteredData.length / 12);
+      setCount(totalPages)
+      setData(filteredData)
+      })
+      .catch(err => {
+        console.error('API Error:', err); // Xatolik yuz bersa, konsolga chiqarish
+      }); 
+    }
+  
   }
 
 function buyProduct(image,title,code,price,id) {
@@ -65,7 +86,7 @@ last_shop.push(data_push)
 }
 
   useEffect(()=>{
-    getProduct()
+ if(id){ getProduct()}
   },[id]);
 
   const handlePageChange = (page) => {
@@ -75,25 +96,33 @@ last_shop.push(data_push)
   return (
     <div>
       <Navbar />
-      <div className={s.catalog__title}>Termal tasvirlar bo’limi</div>
+      <div className={s.catalog__title}>{title}</div>
       <div className={s.catalog_body}>
         <div className={s.catalog_media_button}><FaFilter className={s.catalog_media_button__icons} /> Filter narxi</div>
         <div className={s.catalog_filter}>
           <h2>Summa</h2>
+
+          <div onMouseOut={()=>getProduct()}>
           <MultiRangeSlider
             min={0}
-            max={20000}
-            onChange={(e) => { setMin(e.min); setMax(e.max) }}
-          />
+            max={9000000}
+            
+            onChange={(e) =>{setMin(e.min); setMax(e.max);
+             }}
+           
+          /></div>
           <div className={s.catalog_filter_result}>
             <div className={s.catalog_filter_min}>{min2}</div>
             <div className={s.catalog_filter_max}>{max2}</div>
           </div>
           <div className={s.catalog_filter_line}></div>
-          <div className={s.catalog_filter_button}> <MdRefresh style={{ fontSize: '20px' }} /> Filterni tozalash</div>
+          <div onClick={()=>{window.location.reload()}} className={s.catalog_filter_button} style={{cursor:'pointer'}}> <MdRefresh style={{ fontSize: '20px' }} /> Filterni tozalash</div>
         </div>
         <div className={s.catalog_cards}>
 {data1 && data1.map((item,key)=>{
+ 
+  
+  if((currentPage-1)*12<=key && currentPage*12>key){
   return <div key={key} className={s.catalog_card}>
             <div className={s.catalog_card_image}>
               <img style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.catalog_image} src={item.images.rows[0].miniature.downloadHref}  alt="" />
@@ -102,21 +131,22 @@ last_shop.push(data_push)
               {(item.quantity || item.quantity==0)?<></>:<span className={s.count_product}><div>Sotuvda bor:</div>
             <div>{item.quantity}  dona</div></span>}
               <h1>{item.buyPrice.value/100} so`m</h1>
-              <div onClick={()=>{buyProduct(`${item.images.rows[0].miniature.downloadHref}`,`${item.pathName}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`)}} className={s.catalog_icons}>
+              <div onClick={()=>{buyProduct(`${item.images.rows[0].miniature.downloadHref}`,`${item.name}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`)}} className={s.catalog_icons}>
                 <TbShoppingBagPlus style={{ fontSize: '20px', color: '#6a6a6a' }} />
               </div>
             </div>
           </div>
+ }
 })}      
         </div>
       </div>
 
 
-      <Pagination
-        totalPages={totalPages}
+  {count>1?(    <Pagination
+        totalPages={count}
         currentPage={currentPage}
         onPageChange={handlePageChange}
-      />
+      />):("")}
        <ToastContainer />
       <Footer1 />
     </div>

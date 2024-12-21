@@ -121,7 +121,7 @@ useEffect(()=>{
         </div>
         <div className={s.mini_cantroll_bar}>
           {headerImage.map((label, index) => (
-            <div style={indexkey == index ? { borderBottom: "1px solid #E30613", color: '#E30613',textWrap:'nowrap' } : { borderBottom: 'none', color: "black", cursor:"pointer" }} key={index} className="pagination-button" onClick={() => { swiperRef.current.slideTo(index); setIndexKey(index) }} >
+            <div style={indexkey == index ? { borderBottom: "1px solid #E30613", color: '#E30613',textWrap:'nowrap',cursor:'pointer' } : { borderBottom: 'none', color: "black",cursor:'pointer' }} key={index} className="pagination-button" onClick={() => { swiperRef.current.slideTo(index); setIndexKey(index) }} >
               {label.title}
             </div>
           ))}</div>

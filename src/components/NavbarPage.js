@@ -55,6 +55,10 @@ export default function Navbar() {
         }).catch(err => {
         })
     }
+
+
+
+    
     function getCategory(params) {
         axios.get(`${url}/api/category`).then(res => {
             setAllCategory(res.data)
@@ -67,9 +71,18 @@ export default function Navbar() {
         })
     }
 
+
+    var [product,setProduct]=useState([])
+function getProduct() {
+    axios.get(`${url}/api/product?limit=10000`).then(res=>{
+setProduct(res.data)
+    })
+}
+
     useEffect(() => {
         getCompany()
         getCategory()
+        getProduct()
     }, [])
     return (
         <div className={s.navbar_body}>
@@ -147,11 +160,11 @@ export default function Navbar() {
                     }} type="text" placeholder='2 000 000 dan ortiq tavar bor' />
                     <div id="searchresult" className={s.searchResalt}>
                         <ul>
-                        {allcategory
-    .filter((item) => item.category_title.includes(searchKey)) 
+                        {product
+    .filter((item) => item.name.includes(searchKey)) 
     .slice(0, 10)
     .map((item, key) => (
-        <li style={{cursor:'pointer'}} key={key} onClick={()=>window.location=`/catalog/${item.category_id}`}>{item.category_title}</li> 
+        <li style={{cursor:'pointer'}} key={key} onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.name}</li> 
     ))}
                            
                           
@@ -174,7 +187,7 @@ export default function Navbar() {
                                         <div className={s.accordioncontent}>
                                            {subCategory.map((item,key)=>{
     if(item.subcategory===subcategory__id){
-return <p onClick={()=>window.location=`/catalog/${item.category_id}`} >{item.category_title}</p>
+return <p onClick={()=>window.location=`/catalog/${item.category_id}?title=${item.category_title}`} >{item.category_title}</p>
     }
 })}
                                         </div>
@@ -193,7 +206,7 @@ return <p onClick={()=>window.location=`/catalog/${item.category_id}`} >{item.ca
                         <div className={s.katalogPage__category__cards}>
 {subCategory.map((item,key)=>{
     if(item.subcategory===subcategory__id){
-return <p onClick={()=>window.location=`/catalog/${item.category_id}`}>{item.category_title}</p>
+return <p onClick={()=>window.location=`/catalog/${item.category_id}?title=${item.category_title}`}>{item.category_title}</p>
     }
 })}
                           

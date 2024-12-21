@@ -13,6 +13,7 @@ import Footer1 from "../components/footer";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useCart } from "@/host/CartContext";
 function page() {
 
 
@@ -58,7 +59,7 @@ function sotibOlinganlar() {
     sotibOlinganlar()
   }
 
-
+ const { setCartCount } = useCart();
 
 
   function click_check() {
@@ -96,6 +97,7 @@ function sotibOlinganlar() {
     testData.splice(key, 1)
     setData(testData)
     localStorage.setItem('shop', JSON.stringify(testData))
+    setCartCount(testData.length)
     var input_1 = document.querySelectorAll('.one_input')
     var test_sum = 0
 
@@ -113,11 +115,13 @@ function sotibOlinganlar() {
     if (testData[key].count <= 1) {
       testData.splice(key, 1)
       splite = true
+     
     } else {
       testData[key].count = testData[key].count - 1
     }
     setData(testData)
     localStorage.setItem('shop', JSON.stringify(testData))
+    setCartCount(testData.length)
     var input_1 = document.querySelectorAll('.one_input')
     var test_sum = 0
     if (splite) {
@@ -134,7 +138,6 @@ function sotibOlinganlar() {
         }
       }
     }
-
 
     setAllSum(test_sum)
     sotibOlinganlar()
@@ -164,6 +167,7 @@ function sotibOlinganlar() {
     testData[key].count = testData[key].count + 1
     setData(testData)
     localStorage.setItem('shop', JSON.stringify(testData))
+    setCartCount(testData.length)
     var input_1 = document.querySelectorAll('.one_input')
     var test_sum = 0
       ;
@@ -189,6 +193,7 @@ function sotibOlinganlar() {
     setAllSum(0)
     document.querySelector('#for_all_check input').checked = false
     localStorage.setItem('shop', JSON.stringify(a))
+    setCartCount(a.length)
   }
 
   function chack_box() {
