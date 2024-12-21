@@ -31,6 +31,7 @@ export default function User() {
 
   return (
     <div>
+      <div style={{padding:"20px"}}>
       <Navbar1 />
       <div className={s.Informations_page}>
         <div className={s.Informations_main}>
@@ -78,6 +79,7 @@ export default function User() {
             <div className={s.for_circles}><div><div className={s.for_circle}></div></div>3,5 dyuymli sensorli displeyli LCD displey</div>
           </div>
         </div>
+      </div>
       </div>
       <Footer1 />
     </div>
