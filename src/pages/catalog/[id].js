@@ -95,7 +95,9 @@ last_shop.push(data_push)
 
   return (
     <div>
+      <div style={{padding:"20px"}}> 
       <Navbar />
+      
       <div className={s.catalog__title}>{title}</div>
       <div className={s.catalog_body}>
         <div className={s.catalog_media_button}><FaFilter className={s.catalog_media_button__icons} /> Filter narxi</div>
@@ -148,6 +150,8 @@ last_shop.push(data_push)
         onPageChange={handlePageChange}
       />):("")}
        <ToastContainer />
+
+       </div>
       <Footer1 />
     </div>
   )
