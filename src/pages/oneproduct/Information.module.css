@@ -10,12 +10,42 @@
 }
 
 .for_image_1{
-    display: flex;
+    display: block;
     flex-direction: column;
     max-width: 160px;
     width: 100%;
     gap: 15px;
+    
 }
+
+.for_sliders{
+    height: 500px;
+    overflow: hidden;
+    overflow: auto;
+    padding-right: 10px;
+}
+
+.for_sliders::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+  }
+  
+  /* Track */
+  .for_sliders::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  .for_sliders::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px ;
+  }
+  
+  /* Handle on hover */
+  .for_sliders::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
 .infor_cards{
     margin-top: 30px;
@@ -134,6 +164,10 @@
         font-size: 32px;
     }
 
+    .for_sliders{
+        height: 370px;
+    }
+
     .for_cent_img{
         width: 120px;
         height: 120px;
@@ -203,6 +237,16 @@
 @media(max-width: 480px){
     .for_images{
         flex-direction: column-reverse;
+    }
+
+    .for_sliders{
+        height: auto;
+        width: 100%;
+        overflow-y: hidden;
+    }
+
+    .for_image_1{
+        display: flex;
     }
 
     .for_image_2{

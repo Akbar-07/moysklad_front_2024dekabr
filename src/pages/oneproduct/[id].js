@@ -41,6 +41,7 @@ export default function User() {
           <div className={s.infor_cards}>
             <div className={s.infor_card_1}>
               {data.images?.rows?.length >= 3 ? (<div className={s.for_images}>
+                <div className={s.for_sliders}>
                 <div className={s.for_image_1}>
                   <div className={s.for_cent_img}>
                     <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[0]?.miniature?.downloadHref} src={data.images?.rows[0]?.miniature?.downloadHref} alt="" /></div>
@@ -48,13 +49,13 @@ export default function User() {
                     <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[1]?.miniature?.downloadHref} src={data.images?.rows[1]?.miniature?.downloadHref} alt="" /></div>
                   <div className={s.for_cent_img}>
                     <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[2]?.miniature?.downloadHref} src={data.images?.rows[2]?.miniature?.downloadHref} alt="" /></div>
-                </div>
+                  </div></div>
                 <div className={s.for_image_2}>
                   <img className="asosiy_rasm" src={data.images?.rows[0]?.miniature?.downloadHref} alt="" />
                 </div>
               </div>) : (
-                <div>
-                  <img src={data.images?.rows[0]?.miniature?.downloadHref} alt="" />
+                <div className={s.for_image_2}>
+                  <img className="asosiy_rasm" src={data.images?.rows[0]?.miniature?.downloadHref} alt="" />
                 </div>
               )}
 
