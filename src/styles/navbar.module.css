@@ -200,6 +200,7 @@ text-align: center;
     padding-left: 11px;
     font-size: 13px;
     letter-spacing: 1px;
+    color: black !important;
 }
 .none__pk__toggle{
     display: none;
